@@ -43,16 +43,6 @@ export { Input } from "@/components/ui/input/input";
 export { SearchBar } from "@/components/ui/input/search-bar";
 
 export {
-    Pagination,
-    PaginationContent,
-    PaginationEllipsis,
-    PaginationItem,
-    PaginationLink,
-    PaginationNext,
-    PaginationPrevious,
-} from "@/components/ui/pagination/pagination";
-
-export {
     Popover,
     PopoverTrigger,
     PopoverContent,
