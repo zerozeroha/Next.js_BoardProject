@@ -1,7 +1,5 @@
-import { useState } from "react";
-import { useParams } from "next/navigation";
-// import { supabase } from "@/lib/supabase";
-import { useToast } from "@/hooks/use-toast";
+"use client";
+
 import {
     Button,
     Checkbox,
@@ -18,10 +16,14 @@ import {
 } from "@/components/ui";
 import MarkdownEditor from "@uiw/react-markdown-editor";
 
-function MarkdownDialog() {
+interface Props {
+    children: React.ReactNode;
+}
+
+function MarkdownDialog({ children }: Props) {
     return (
         <Dialog>
-            <DialogTrigger asChild></DialogTrigger>
+            <DialogTrigger asChild>{children}</DialogTrigger>
             <DialogContent>
                 <DialogHeader className="flex flex-col">
                     <DialogTitle>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import {
@@ -10,8 +10,7 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui";
-import { Calendar as CalendarIcon } from "lucide-react";
-// import { Calendar1Icon } from "@/public/assets/icons";
+import { CalendarIcon } from "@/public/assets/icons";
 
 interface Props {
     label: string;

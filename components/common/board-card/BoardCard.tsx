@@ -1,11 +1,5 @@
-"use client";
-
-import { useState } from "react";
-import { useParams } from "next/navigation";
-// import { supabase } from "@/lib/supabase";
-import { useToast } from "@/hooks/use-toast";
-/** FSD 컴포넌트 */
-// import { MarkdownEditorDialog } from "@/features";
+/** UI 컴포넌트 */
+import { MarkdownDialog } from "@/components/common";
 import {
     Button,
     Card,
@@ -13,9 +7,7 @@ import {
     LabelDatePicker,
     Separator,
 } from "@/components/ui";
-import { ChevronUp } from "lucide-react";
-import { MarkdownDialog } from "../markdown/MarkdownDialog";
-/** 타입 */
+import { ChevronUp } from "@/public/assets/icons";
 
 function BoardCard() {
     return (
@@ -60,11 +52,14 @@ function BoardCard() {
             </div>
             <Separator className="my-3" />
             {/* Add Contents 버튼 영역 */}
-            {/* <MarkdownDialog> */}
-            <Button variant={"ghost"} className="font-normal text-[#6D6D6D]">
-                Add Contents
-            </Button>
-            {/* </MarkdownDialog> */}
+            <MarkdownDialog>
+                <Button
+                    variant={"ghost"}
+                    className="font-normal text-[#6D6D6D]"
+                >
+                    Add Contents
+                </Button>
+            </MarkdownDialog>
         </Card>
     );
 }

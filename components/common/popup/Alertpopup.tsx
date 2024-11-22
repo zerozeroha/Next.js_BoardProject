@@ -1,8 +1,6 @@
 "use client";
 
-import { useParams, useRouter } from "next/navigation";
-// import { supabase } from "@/lib/supabase";
-import { useToast } from "@/hooks/use-toast";
+/** UI 컴포넌트 */
 import {
     AlertDialog,
     AlertDialogAction,
@@ -14,12 +12,45 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from "@/components/ui";
+import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/lib/supabase";
+import { Description } from "@radix-ui/react-dialog";
+import { useParams } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { handleClientScriptLoad } from "next/script";
 
 interface Props {
     children: React.ReactNode;
 }
 
 function AlertPopup({ children }: Props) {
+    const { id } = useParams();
+    const router = useRouter();
+
+    const handleDeleteTask = async () => {
+        const { status, error } = await supabase
+            .from("todos")
+            .delete()
+            .eq("id", id);
+
+        if (status === 204) {
+            toast({
+                title: "해당 task delete completed",
+                description: " 언제든 새로우 task 만들어라",
+            });
+            router.push("/board/1");
+        }
+        if (error) {
+            console.error(error);
+            toast({
+                variant: "destructive",
+                title: "에러발생",
+                description: "예상못한 에러",
+            });
+        }
+        console.log(status, error);
+    };
+
     return (
         <AlertDialog>
             <AlertDialogTrigger asChild>{children}</AlertDialogTrigger>
@@ -36,7 +67,10 @@ function AlertPopup({ children }: Props) {
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                     <AlertDialogCancel>취소</AlertDialogCancel>
-                    <AlertDialogAction className="bg-red-600 hover:bg-rose-600">
+                    <AlertDialogAction
+                        onClick={handleDeleteTask}
+                        className="bg-red-600 hover:bg-rose-600"
+                    >
                         삭제
                     </AlertDialogAction>
                 </AlertDialogFooter>

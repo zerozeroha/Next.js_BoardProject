@@ -1,16 +1,3 @@
-export { Button, buttonVariants } from "@/components/ui/button/button";
-
-export {
-    Card,
-    CardHeader,
-    CardFooter,
-    CardTitle,
-    CardDescription,
-    CardContent,
-} from "@/components/ui/card/card";
-
-export { Checkbox } from "@/components/ui/checkbox/checkbox";
-
 export {
     AlertDialog,
     AlertDialogPortal,
@@ -23,8 +10,18 @@ export {
     AlertDialogDescription,
     AlertDialogAction,
     AlertDialogCancel,
-} from "@/components/ui/dialog/alert-dialog";
-
+} from "./dialog/alert-dialog";
+export { Button, buttonVariants } from "./button/button";
+export {
+    Card,
+    CardHeader,
+    CardFooter,
+    CardTitle,
+    CardDescription,
+    CardContent,
+} from "./card/card";
+export { Checkbox } from "./checkbox/checkbox";
+export { Calendar } from "./date-picker/calendar";
 export {
     Dialog,
     DialogPortal,
@@ -36,24 +33,14 @@ export {
     DialogFooter,
     DialogTitle,
     DialogDescription,
-} from "@/components/ui/dialog/dialog";
-
-export { Input } from "@/components/ui/input/input";
-
-export { SearchBar } from "@/components/ui/input/search-bar";
-
-export {
-    Popover,
-    PopoverTrigger,
-    PopoverContent,
-} from "@/components/ui/popover/popover";
-
-export { Progress } from "@/components/ui/progress/progress";
-
-export { Separator } from "@/components/ui/separator/separator";
-
-export { Skeleton } from "@/components/ui/skeleton/skeleton";
-
+} from "./dialog/dialog";
+export { LabelDatePicker } from "./date-picker/LabelDatePIcker";
+export { Input } from "./input/input";
+export { Popover, PopoverTrigger, PopoverContent } from "./popover/popover";
+export { Progress } from "./progress/progress";
+export { Separator } from "./separator/separator";
+export { SearchBar } from "./input/search-bar";
+export { Skeleton } from "./skeleton/skeleton";
 export {
     type ToastProps,
     type ToastActionElement,
@@ -64,8 +51,4 @@ export {
     ToastDescription,
     ToastClose,
     ToastAction,
-} from "@/components/ui/toast/toast";
-
-export { Calendar } from "@/components/ui/datepicker/calendar";
-
-export { LabelDatePicker } from "@/components/ui/datepicker/LabelDatePIcker";
+} from "./toast/toast";
