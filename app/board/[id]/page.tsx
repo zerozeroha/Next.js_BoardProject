@@ -25,7 +25,7 @@ function BoardPage() {
     const getTask = async () => {
         try {
             const { data, status } = await supabase
-                .from("tasks")
+                .from("todos")
                 .select("*")
                 .eq("id", id);
 
@@ -56,7 +56,7 @@ function BoardPage() {
     ) => {
         try {
             const { data, status } = await supabase
-                .from("tasks")
+                .from("todos")
                 .update({ [column]: newValue })
                 .eq("id", uid)
                 .select();
