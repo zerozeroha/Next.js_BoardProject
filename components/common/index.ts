@@ -4,4 +4,4 @@ export { AlertPopup } from "./popup/Alertpopup";
 
 export { BoardCard } from "./board-card/BoardCard";
 
-export { MarkdownDialog } from "./markdown/MarkdownDialog";
+export { MarkdownEditorDialog } from "./markdown/MarkdownDialog";
