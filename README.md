@@ -73,7 +73,7 @@
 [TASK]
 
 -   `TASK 생성`: Add New Page 버튼 클릭 시, TASK 생성
--   `TASK 검색`: Supabase "tasks" DB 테이블 내에 존재하는 TASK 필터링
+-   `TASK 검색`: Supabase "todos" DB 테이블 내에 존재하는 TASK 필터링
 -   `TASK 조회` : useParam의 id값을 추출하여 DB의 primary key와 비교하여 TASK 조회
 -   `TASK 삭제`: `/board/:id` 페이지의 `삭제` 버튼 클릭 시, TASK 삭제
 -   `TASK 수정`: title, start_date, end_date 필수 값을 param으로 사용하여 Update
