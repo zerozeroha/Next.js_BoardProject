@@ -1,11 +1,10 @@
-### 스나이퍼팩토리 NEXT.js 4기 교육과정
 
 ### 프로젝트 설명
 
 1. Shadcn UI 공식문서의 CLI를 통해 NEXT.js 프로젝트를 생성합니다. 하기에 작성한 명령어를 통해 설치해줍니다. 또한, 모든 기본 설정을 통해 진행하였습니다.
    <br /> 단, 컬러 테마는 본인의 취향에 맞게 선택해주십시오. - npx shadcn@latest init -
 
-안녕하세요, '구디사는 개발자 9Diin' 입니다. <br />
+안녕하세요, 'zeroha 김하영' 입니다. <br />
 <br />
 해당 프로젝트는 NEXT.js (14버전)과 Supabase, 그리고 Markdown Editor 라이브러리를 사용하여 CRUD(Create, Read, Update, Delete) 기능을 구현한 나만의 TODO-LIST 및 TODO-BOARD를 구현해보는 예제 프로젝트입니다. <br />
 <br />
