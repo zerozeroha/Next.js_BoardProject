@@ -3,12 +3,12 @@
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase/client";
 import { useCreateBoard, useGetTaskById, useGetTasks } from "@/hooks/api";
 import { toast } from "@/hooks/use-toast";
 import { nanoid } from "nanoid";
 /** UI 컴포넌트 */
-import { AlertPopup, BoardCard } from "@/components/common";
+import { DeleteTaskPopup, BoardCard } from "@/components/common";
 import { Button, Progress, LabelDatePicker } from "@/components/ui";
 import { ChevronLeft } from "@/public/assets/icons";
 /** 스타일 */
@@ -16,9 +16,10 @@ import styles from "./page.module.scss";
 /** 타입 */
 import { Board } from "@/types";
 
-function BoardPage() {
+function BoardDetailPage() {
     const { id } = useParams();
     const router = useRouter();
+    const supabase = createClient();
     const { getTasks } = useGetTasks();
     const { task } = useGetTaskById(Number(id)); // 특정 id 값에 따른 TASK 데이터
     const createBoard = useCreateBoard();
@@ -58,7 +59,7 @@ function BoardPage() {
 
         try {
             const { data, status, error } = await supabase
-                .from("tasks")
+                .from("todos")
                 .update({
                     title: title,
                     start_date: startDate,
@@ -133,11 +134,11 @@ function BoardPage() {
                         <Button variant={"secondary"} onClick={handleSave}>
                             저장
                         </Button>
-                        <AlertPopup>
+                        <DeleteTaskPopup>
                             <Button className="text-rose-600 bg-red-50 hover:bg-rose-50">
                                 삭제
                             </Button>
-                        </AlertPopup>
+                        </DeleteTaskPopup>
                     </div>
                 </div>
                 <div className={styles.header__top}>
@@ -218,4 +219,4 @@ function BoardPage() {
     );
 }
 
-export default BoardPage;
+export default BoardDetailPage;

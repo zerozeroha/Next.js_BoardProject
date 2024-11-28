@@ -10,7 +10,6 @@ import {
     Button,
     Checkbox,
     Dialog,
-    DialogClose,
     DialogContent,
     DialogDescription,
     DialogFooter,
@@ -32,7 +31,7 @@ interface Props {
 function MarkdownEditorDialog({ children, board }: Props) {
     const { id } = useParams();
     const updateBoards = useCreateBoard();
-    const [task, setTask] = useAtom(taskAtom);
+    const [task] = useAtom(taskAtom);
     /** 상태 값 선언 */
     const [isCompleted, setIsCompleted] = useState<boolean>(false);
     const [title, setTitle] = useState<string>("");

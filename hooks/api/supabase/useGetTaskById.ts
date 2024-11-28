@@ -1,26 +1,24 @@
-import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/lib/supabase";
+"use client";
+
+import { toast } from "@/hooks/use-toast";
+import { createClient } from "@/lib/supabase/client";
 import { taskAtom } from "@/stores/atoms";
-import { Task } from "@/types";
 import { useAtom } from "jotai";
 import { useEffect } from "react";
 
 function useGetTaskById(taskId: number) {
-    // taskId는 ID 값이므로 number 타입으로 수정
-    const { toast } = useToast();
+    const supabase = createClient();
     const [task, setTask] = useAtom(taskAtom);
 
     const getTaskById = async () => {
         try {
-            const { data, error, status } = await supabase
+            const { data, status, error } = await supabase
                 .from("todos")
                 .select("*")
-                .eq("id", taskId)
-                .single(); // 단일 row 가져오도록 변경
+                .eq("id", taskId);
 
-            if (status === 200 && data) {
-                setTask(data);
-            } else if (error) {
+            if (data && status === 200) setTask(data[0]);
+            if (error) {
                 toast({
                     variant: "destructive",
                     title: "에러가 발생했습니다.",
@@ -29,9 +27,9 @@ function useGetTaskById(taskId: number) {
                     }`,
                 });
             }
-        } catch (error: any) {
-            // catch 블록의 error를 명시적으로 선언
-            console.error(error); // 실제 오류를 콘솔에 출력
+        } catch (error) {
+            /** 네트워크 오류나 예기치 않은 에러를 잡기 위해 catch 구문 사용 */
+            console.error(error);
             toast({
                 variant: "destructive",
                 title: "네트워크 오류",
@@ -41,11 +39,10 @@ function useGetTaskById(taskId: number) {
     };
 
     useEffect(() => {
-        if (taskId) {
-            getTaskById();
-        }
+        if (taskId) getTaskById();
     }, [taskId]);
 
     return { task, getTaskById };
 }
+
 export { useGetTaskById };

@@ -52,3 +52,32 @@ export {
     ToastClose,
     ToastAction,
 } from "./toast/toast";
+export { Label } from "./label/label";
+export { Avatar, AvatarImage, AvatarFallback } from "./avatar/avatar";
+export {
+    DropdownMenu,
+    DropdownMenuTrigger,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuCheckboxItem,
+    DropdownMenuRadioItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuShortcut,
+    DropdownMenuGroup,
+    DropdownMenuPortal,
+    DropdownMenuSub,
+    DropdownMenuSubContent,
+    DropdownMenuSubTrigger,
+    DropdownMenuRadioGroup,
+} from "./dropdown/dropdown-menu";
+
+export {
+    Breadcrumb,
+    BreadcrumbList,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbPage,
+    BreadcrumbSeparator,
+    BreadcrumbEllipsis,
+} from "./breadcrumb/breadcrumb";

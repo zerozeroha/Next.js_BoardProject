@@ -19,7 +19,7 @@ interface Props {
     children: React.ReactNode;
 }
 
-function AlertPopup({ children }: Props) {
+function DeleteTaskPopup({ children }: Props) {
     const { id } = useParams();
     const handleDeleteTask = useDeleteTask();
 
@@ -51,4 +51,4 @@ function AlertPopup({ children }: Props) {
     );
 }
 
-export { AlertPopup };
+export { DeleteTaskPopup };
