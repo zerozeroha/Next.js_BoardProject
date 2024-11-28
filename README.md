@@ -132,7 +132,7 @@
 2. 개인 Dashboard 화면으로 접근
 3. 오른쪽 Add New 버튼 클릭 후, `project` 메뉴 선택
 4. 해당 프로젝트 Git Repository 선택
-5. 프로젝트 배포 -> Error 발생 확률 58,000% 지리는 김시선급 <br /><br />
+5. 프로젝트 배포 -> Error 발생 확률높음 <br /><br />
    [에러 해결 방법] <br />
     - 사용하지 않는 코드 제거 (예시: LabelDatePicker 컴포넌트의 useState 제거, Canledar 컴포넌트의 props를 포함한 components:{} 객체 부분 제거 등) 각자 상황의 맞게 코드 제거
     - next.config.mjs 파일을 아래와 같이 수정-
