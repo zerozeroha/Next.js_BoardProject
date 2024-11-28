@@ -1,19 +1,18 @@
 "use client";
 
 import { toast } from "@/hooks/use-toast";
-import { createClient } from "@/lib/supabase/client";
+import { supabase } from "@/lib/supabase/client";
 import { taskAtom } from "@/stores/atoms";
 import { useAtom } from "jotai";
 import { useEffect } from "react";
 
 function useGetTaskById(taskId: number) {
-    const supabase = createClient();
     const [task, setTask] = useAtom(taskAtom);
-
     const getTaskById = async () => {
+        console.log(task);
         try {
             const { data, status, error } = await supabase
-                .from("todos")
+                .from("tasks")
                 .select("*")
                 .eq("id", taskId);
 

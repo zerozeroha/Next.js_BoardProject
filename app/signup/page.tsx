@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { createClient } from "@/lib/supabase/client";
+import { supabase } from "@/lib/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import useEmailCheck from "@/hooks/use-email";
 /** UI 컴포넌트 */
@@ -21,7 +21,6 @@ import {
 import { Eye, EyeOff } from "@/public/assets/icons";
 
 function SignUpPage() {
-    const supabase = createClient();
     const router = useRouter();
     const { checkEmail } = useEmailCheck();
     /** 회원가입에 필요한 상태 값 */
