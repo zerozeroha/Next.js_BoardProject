@@ -1,11 +1,9 @@
-### 스나이퍼팩토리 NEXT.js 4기 교육과정
-
 ### 프로젝트 설명
 
 1. Shadcn UI 공식문서의 CLI를 통해 NEXT.js 프로젝트를 생성합니다. 하기에 작성한 명령어를 통해 설치해줍니다. 또한, 모든 기본 설정을 통해 진행하였습니다.
    <br /> 단, 컬러 테마는 본인의 취향에 맞게 선택해주십시오. - npx shadcn@latest init -
 
-안녕하세요, '구디사는 개발자 9Diin' 입니다. <br />
+안녕하세요, 'zeroha 김하영' 입니다. <br />
 <br />
 해당 프로젝트는 NEXT.js (14버전)과 Supabase, 그리고 Markdown Editor 라이브러리를 사용하여 CRUD(Create, Read, Update, Delete) 기능을 구현한 나만의 TODO-LIST 및 TODO-BOARD를 구현해보는 예제 프로젝트입니다. <br />
 <br />
@@ -73,7 +71,7 @@
 [TASK]
 
 -   `TASK 생성`: Add New Page 버튼 클릭 시, TASK 생성
--   `TASK 검색`: Supabase "tasks" DB 테이블 내에 존재하는 TASK 필터링
+-   `TASK 검색`: Supabase "todos" DB 테이블 내에 존재하는 TASK 필터링
 -   `TASK 조회` : useParam의 id값을 추출하여 DB의 primary key와 비교하여 TASK 조회
 -   `TASK 삭제`: `/board/:id` 페이지의 `삭제` 버튼 클릭 시, TASK 삭제
 -   `TASK 수정`: title, start_date, end_date 필수 값을 param으로 사용하여 Update
@@ -137,7 +135,7 @@
 5. 프로젝트 배포 -> Error 발생 확률 58,000% 지리는 김시선급 <br /><br />
    [에러 해결 방법] <br />
     - 사용하지 않는 코드 제거 (예시: LabelDatePicker 컴포넌트의 useState 제거, Canledar 컴포넌트의 props를 포함한 components:{} 객체 부분 제거 등) 각자 상황의 맞게 코드 제거
-    - next.config.mjs 파일을 아래와 같이 수정
+    - next.config.mjs 파일을 아래와 같이 수정-
 
 ```
 /** @type {import('next').NextConfig} */
